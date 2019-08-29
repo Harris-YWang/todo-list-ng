@@ -19,4 +19,8 @@ export class TodoService {
 
     return this.data;
   }
+
+  getTodo(id: number): Todo {
+    return this.data.find(item =>item.id === id);
+  }
 }
