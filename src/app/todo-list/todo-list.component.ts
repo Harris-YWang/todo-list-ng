@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
 import { Todo } from "../interface";
 import { Router, ActivatedRoute } from "@angular/router";
 interface PrivateTodo extends Todo {
@@ -10,10 +10,11 @@ interface PrivateTodo extends Todo {
   styleUrls: ["./todo-list.component.scss"]
 })
 export class TodoListComponent implements OnInit {
-  todos: PrivateTodo[] = [
-    { id: 999, description: "For test purpose", category: 1, content: "test" },
-    { id: 2, description: "For test purpose", category: 1, content: "test" }
-  ];
+  @Input()
+  todos: PrivateTodo[];
+
+  @Output()
+  delete: EventEmitter<number[]> = new EventEmitter();
 
   selectAll = false;
 
@@ -21,9 +22,6 @@ export class TodoListComponent implements OnInit {
 
   ngOnInit() {}
 
-  delete(ids: number[]) {
-    this.todos = this.todos.filter(item => ids.indexOf(item.id) === -1);
-  }
   toggleAll() {
     console.log(this.selectAll);
     this.todos.forEach(item => (item.selected = this.selectAll));
@@ -34,7 +32,7 @@ export class TodoListComponent implements OnInit {
   deleteSelected() {
     const ids = this.todos.filter(item => item.selected).map(item => item.id);
 
-    this.delete(ids);
+    this.delete.next(ids);
   }
   navigateTo(todo: PrivateTodo, event: MouseEvent) {
     if (event.target instanceof HTMLTableCellElement) {
