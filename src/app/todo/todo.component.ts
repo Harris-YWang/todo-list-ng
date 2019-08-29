@@ -1,11 +1,11 @@
-import { Component, OnInit } from "@angular/core";
-import { Todo } from "../interface";
-import { TodoService } from "../providers/todo.service";
+import { Component, OnInit } from '@angular/core';
+import { Todo } from '../interface';
+import { TodoService } from '../providers/todo.service';
 
 @Component({
-  selector: "app-todo",
-  templateUrl: "./todo.component.html",
-  styleUrls: ["./todo.component.scss"]
+  selector: 'app-todo',
+  templateUrl: './todo.component.html',
+  styleUrls: ['./todo.component.scss'],
 })
 export class TodoComponent implements OnInit {
   todoList: Todo[];
@@ -18,5 +18,9 @@ export class TodoComponent implements OnInit {
 
   delete(ids: number[]) {
     this.todoList = this.todoServe.delete(ids);
+  }
+
+  add(data: Partial<Todo>) {
+    this.todoList = this.todoServe.addTodo(data);
   }
 }

@@ -1,13 +1,13 @@
-import { Injectable } from "@angular/core";
-import { Todo } from "../interface";
+import { Injectable } from '@angular/core';
+import { Todo } from '../interface';
 
 @Injectable({
-  providedIn: "root"
+  providedIn: 'root',
 })
 export class TodoService {
   private data: Todo[] = [
-    { id: 999, description: "For test purpose", category: 1, content: "test" },
-    { id: 2, description: "For test purpose", category: 1, content: "test" }
+    { id: 999, description: 'For test purpose', category: 1, content: 'test' },
+    { id: 2, description: 'For test purpose', category: 1, content: 'test' },
   ];
   constructor() {}
 
@@ -21,6 +21,15 @@ export class TodoService {
   }
 
   getTodo(id: number): Todo {
-    return this.data.find(item =>item.id === id);
+    return this.data.find(item => item.id === id);
+  }
+
+  addTodo(todo: Partial<Todo>): Todo[] {
+    const id = parseInt(Math.random() * 1000000 + '', 10);
+    const newTodo = { ...todo, id } as Todo;
+
+    this.data = [...this.data, newTodo];
+
+    return this.data;
   }
 }
