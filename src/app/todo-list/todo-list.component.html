@@ -15,7 +15,11 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let item of todos; even as isEven" [ngClass]="{ even: isEven }">
+    <tr
+      *ngFor="let item of todos; even as isEven"
+      [ngClass]="{ even: isEven }"
+      (click)="navigateTo(item, $event)"
+    >
       <td>
         <input
           type="checkbox"
