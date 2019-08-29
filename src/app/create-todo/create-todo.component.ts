@@ -1,15 +1,20 @@
-import { Component, OnInit } from "@angular/core";
-import { FormGroup, FormBuilder, AbstractControl } from "@angular/forms";
-import { Category as Cate } from "../interface";
+import { Component, OnInit } from '@angular/core';
+import {
+  FormGroup,
+  FormBuilder,
+  AbstractControl,
+  Validators
+} from '@angular/forms';
+import { Category as Cate } from '../interface';
 interface Category {
   id: number;
   name: string;
 }
 
 @Component({
-  selector: "app-create-todo",
-  templateUrl: "./create-todo.component.html",
-  styleUrls: ["./create-todo.component.scss"]
+  selector: 'app-create-todo',
+  templateUrl: './create-todo.component.html',
+  styleUrls: ['./create-todo.component.scss']
 })
 export class CreateTodoComponent implements OnInit {
   form: FormGroup;
@@ -22,9 +27,9 @@ export class CreateTodoComponent implements OnInit {
 
   ngOnInit() {
     this.form = this.fb.group({
-      description: "",
-      category: "",
-      content: ""
+      description: ['', [Validators.required, Validators.maxLength(15)]],
+      category: ['', [Validators.required, Validators.required]],
+      content: ''
     });
   }
 
@@ -33,10 +38,10 @@ export class CreateTodoComponent implements OnInit {
   }
 
   get description(): AbstractControl {
-    return this.form.get("description");
+    return this.form.get('description');
   }
 
   get category(): AbstractControl {
-    return this.form.get("category");
+    return this.form.get('category');
   }
 }
