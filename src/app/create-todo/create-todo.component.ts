@@ -17,6 +17,7 @@ export class CreateTodoComponent implements OnInit {
     { id: 0, name: Cate[0] },
     { id: 1, name: Cate[1] },
     { id: 2, name: Cate[2] },
+    { id: 3, name: Cate[3] },
   ];
 
   @Output()

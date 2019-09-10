@@ -13,7 +13,7 @@
   </div>
 
   <div class="form-control">
-    <label>Category: </label>
+    <label>Category:</label>
     <select formControlName="category">
       <option *ngFor="let item of categories" [value]="item.id">{{ item.name }}</option>
     </select>
@@ -22,7 +22,7 @@
     Please select a category.
   </div>
   <div class="form-control">
-    <label>Content </label>
+    <label>Content:</label>
     <textarea formControlName="content"></textarea>
   </div>
 </form>

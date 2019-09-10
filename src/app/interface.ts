@@ -6,7 +6,8 @@ export interface Todo {
 }
 
 export enum Category {
-  html,
-  css,
-  js
+  'Do Now!!',
+  'Do Tomorrow!',
+  'Do Soon..',
+  'Only When Extra Time.'
 }

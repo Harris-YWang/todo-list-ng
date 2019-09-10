@@ -1,18 +1,20 @@
 button {
   padding: 5px;
   border-radius: 2px;
-  -webkit-border-radius: 2px;
+  -webkit-border-radius: 4px;
   -moz-border-radius: 2px;
   -ms-border-radius: 2px;
   -o-border-radius: 2px;
-  background: deepskyblue;
+  background: skyblue;
   cursor: pointer;
   margin-bottom: 20px;
-  color:#fff;
+  color: #fff;
+  border: 0;
 }
 
 button:disabled {
-  background-color: rgba(100, 100, 100, 0.3);
-  color:#000;
-  cursor:initial;
+  background-color: rgba(100, 100, 100, 0.1);
+  color: #000;
+  cursor: initial;
+  margin-left:16.6em;
 }

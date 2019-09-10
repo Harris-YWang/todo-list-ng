@@ -4,17 +4,15 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-nav',
   template: `
     <ul>
-      <li routerLink="todo" routerLinkActive="active">todo</li>
-      <li routerLink="about" routerLinkActive="active">about</li>
+      <li>Welcome to Todo-list project!</li>
+      <li routerLink="todo" routerLinkActive="active">Todo</li>
+      <li routerLink="about" routerLinkActive="active">About</li>
     </ul>
   `,
-  styleUrls: ['./nav.component.scss']
+  styleUrls: ['./nav.component.scss'],
 })
 export class NavComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }

@@ -6,8 +6,7 @@ import { Todo } from '../interface';
 })
 export class TodoService {
   private data: Todo[] = [
-    { id: 999, description: 'For test purpose', category: 1, content: 'test' },
-    { id: 2, description: 'For test purpose', category: 1, content: 'test' },
+    { id: 1, description: 'Sample', category: 1, content: 'Test' },
   ];
   constructor() {}
 
