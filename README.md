@@ -4,9 +4,9 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Brief Description
 
-This is a simple todo-list project.
-You can list your plan, agenda, or whatever you like.
-Don't worry! No data will be kept here when you leave.
+This is a simple todo-list project.<br>
+You can list your plan, agenda, or whatever you like.<br>
+Don't worry! No data will be kept here when you leave.<br>
 Enjoy it! :-)
 
 
